@@ -1,42 +1,45 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico:ital,wght@0,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:ital,wght@0,400;0,700&display=swap');
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  line-height: normal;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+:root {
+  /* Color */
+  /* Light Text */
+  --color-antiquewhite: #f0e6d1;
+  --color-burlywood: #f6cd8b;
+  --color-darksalmon: #d98a60;
+  --color-peru: #ce794d;
+  --color-peru-100: #dd954d;
+  --color-peru-200: #ce794d;
+  --color-peru-300: #b97532;
+  --color-peru-400: #b46e36;
+  --color-saddlebrown-100: #622e1e;
+  /* Dark Text */
+  --color-saddlebrown-200: #5b2818;
+  --color-saddlebrown-300: #572517;
+  --color-sienna-100: #9d5c3d;
+  --color-sienna-200: #985433;
+  --color-sienna-300: #824736;
+  --color-sienna-400: #814330;
+  /* Medium Dark Text */
+  --color-sienna-500: #763b29;
+  --color-sienna-600: #753a29;
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+  /* Font */
+  --font-oxygen: Oxygen;
+  --font-pacifico: Pacifico;
+
+  /* FontSize */
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-32: 2rem;
+
+
 }

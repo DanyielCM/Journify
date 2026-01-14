@@ -1,0 +1,353 @@
+/* Layout */
+.registerPage {
+    background-image: url('/Common/Wood-Background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    color: var(--color-sienna-500);
+    font-family: var(--font-pacifico);
+}
+
+.leftSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    height: 816px;
+}
+
+.rightSection {
+    background-image: url('/Common/Journal.svg');
+    width: 657px;
+    height: 816px;
+}
+
+/* Journal */
+
+.tag {
+    width: 657px;
+    height: 120px;
+    position: relative;
+    top: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tagText {
+    font-size: var(--fs-32);
+    color: var(--color-sienna);
+    font-family: var(--font-pacifico);
+    text-align: center;
+}
+
+.lockNumbers {
+    position: relative;
+    color: var(--color-antiquewhite);
+    font-size: var(--fs-20);
+    width: min-content;
+}
+
+.lockNumber1 {
+    top: 344px;
+    left: 346px;
+}
+
+.lockNumber2 {
+    top: 309px;
+    left: 368px;
+    transform: rotate(-10deg);
+}
+
+.lockNumber3 {
+    top: 270px;
+    left: 389px;
+    transform: rotate(-20deg);
+}
+
+.lockNumber4 {
+    top: 225px;
+    left: 408px;
+    transform: rotate(-30deg);
+}
+
+/* Main Section */
+
+.mainSection {
+    border-radius: 20px;
+    background-color: var(--color-peru-100);
+    border: 2px solid var(--color-peru-400);
+    box-sizing: border-box;
+    width: 500px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: s;
+    gap: 32px;
+    font-family: var(--font-oxygen);
+}
+
+.titleTextMain {
+    padding-top: 24px;
+    font-size: var(--fs-20);
+    font-family: var(--font-pacifico);
+
+}
+
+.formContainer {
+    width: 398px;
+    height: 260px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+    font-size: var(--fs-16);
+    color: var(--color-saddlebrown-200);
+    font-family: var(--font-oxygen);
+}
+
+.inputContainer {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.label {
+    height: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.input,
+.inputInner {
+    align-self: stretch;
+    height: 30px;
+    position: relative;
+    border-radius: 8px;
+    background-color: var(--color-antiquewhite);
+    padding: 0 0 0 8px;
+}
+
+/* Height correction */
+select.input {
+    height: 33px;
+}
+
+.frameInner {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.inputInnerContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Form correction */
+
+.input,
+.inputInner {
+    color: var(--color-sienna-500);
+    border: 2px transparent solid;
+    -webkit-text-fill-color: var(--color-sienna-500);
+    caret-color: var(--color-sienna-500);
+}
+
+
+.input::placeholder,
+.inputInner::placeholder {
+    color: var(--color-sienna-500);
+    opacity: 1;
+}
+
+.input:focus,
+.inputInner:focus {
+    border: 2px solid var(--color-sienna-500);
+    outline: none;
+}
+
+.input:-webkit-autofill,
+.inputInner:-webkit-autofill {
+    -webkit-text-fill-color: var(--color-sienna-500);
+    transition: background-color 999999s ease-out 0s;
+}
+
+/* Buttons */
+
+.buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    font-size: var(--fs-12);
+}
+
+.button3DBig {
+    background-image: url('/Common/Button3D-Big.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 32px;
+    width: 122px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 11px;
+    color: var(--color-antiquewhite);
+    border: none;
+}
+
+.button3DSmall {
+    background-image: url('/Common/Button3D-Small.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 32px;
+    width: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 11px;
+    color: var(--color-antiquewhite);
+    border: none;
+}
+
+.button3DBig a,
+.button3DSmall a {
+    color: var(--color-antiquewhite);
+    text-decoration: none;
+}
+
+.button3DBig:hover,
+.button3DSmall:hover {
+    box-shadow: 0px 2px 2px rgba(58, 29, 20, 0.6);
+    border-radius: 11px;
+}
+
+.button3DBig:active {
+    box-shadow: 0px 2px 2px rgba(58, 29, 20, 0.6);
+    border-radius: 11px;
+    transform: translateY(2px);
+    background-position: center;
+    clip-path: inset(0 0 2px 0);
+}
+
+.button3DSmall:active {
+    box-shadow: 0px 2px 2px rgba(58, 29, 20, 0.6);
+    border-radius: 11px;
+    transform: translateY(2px);
+    background-position: center;
+    clip-path: inset(0 0 2px 0);
+}
+
+.error {
+    width: 100%;
+    color: var(--color-sienna-500);
+    font-size: var(--fs-14);
+    text-align: center;
+}
+
+
+/* Info Section */
+
+.infoSection {
+    background-image: url('/Register/Info-Section-Register.svg');
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 32px;
+    width: 500px;
+    height: 300px;
+    font-size: var(--fs-20);
+}
+
+.titleInfo {
+    padding-top: 24px;
+}
+
+.plansContainer {
+    width: 230px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: var(--fs-20);
+    font-family: var(--font-pacifico);
+    color: var(--color-sienna);
+}
+
+.textPlansContainer {
+    width: 150px;
+    text-align: left;
+}
+
+.titlePlan {
+    text-align: center;
+}
+
+.textPlan {
+    width: 150px;
+    text-align: left;
+    display: inline-block;
+}
+
+/* Arrows Buttons */
+
+.arrowButton {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    padding: 0;
+}
+
+.arrowLeft {
+    background-image: url("/Common/Arrow-Left.svg");
+    position: relative;
+    left: 40px;
+}
+
+.arrowRight {
+    background-image: url("/Common/Arrow-Right.svg");
+    position: relative;
+    right: 40px;
+}
+
+.arrowButton:focus {
+    outline: none;
+}
+
+.arrowButton:focus-visible {
+    outline: 2px solid var(--color-sienna-500);
+    outline-offset: 3px;
+    border-radius: 50%;
+}

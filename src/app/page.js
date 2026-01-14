@@ -1,95 +1,86 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image';
+import styles from './page.module.css';
+import Link from 'next/link';
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className={styles.landingPage}>
+      <div className={styles.leftSection}>
+        <div className={styles.mainSection}>
+          <div className={styles.titleContainerMain}>
+            <div className={styles.titleTextMain}>Welcome to</div>
             <Image
+              src='/Common/Logo.svg'
               className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              width={30}
+              height={30}
+              sizes='100vw'
+              alt=''
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className={styles.description}>
+            <b>
+              Your thoughts, your story, your space.
+              <br />
+            </b>
+            <b>Journify</b>
+            <span>{` is more than just an `}</span>
+            <b>online journal</b>
+            <span>{`—it's your personal sanctuary for reflection, creativity, and growth. Whether you're jotting down `}</span>
+            <b>daily thoughts</b>
+            <span>{`, capturing `}</span>
+            <b>memories</b>
+            <span>{`, setting `}</span>
+            <b>goals</b>
+            <span>{`, or expressing your `}</span>
+            <b>deepest feelings</b>
+            <span>{`, `}</span>
+            <b>Journify</b>
+            <span> makes it simple, safe, and beautifully organized.</span>
+          </div>
+          <div className={styles.buttons}>
+            <div className={styles.button3DBig}>
+              <Link href='/register'>Register for free</Link>
+            </div>
+            <div className={styles.button3DSmall}>
+              <Link href='/login'>Log in</Link>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className={styles.infoSection}>
+          <div className={styles.titleInfo}>How Journify helps you?</div>
+          <div className={styles.infoTextsContainer}>
+            <div className={styles.textContainer1}>
+              <b>1.Get a gentle daily question</b>
+              <p className={styles.infoText}>
+                A small prompt that helps you pause and reflect, even on busy
+                days.
+              </p>
+            </div>
+            <div className={styles.textContainer2}>
+              <b>2.Write a few honest lines</b>
+              <p className={styles.infoText}>
+                No pressure, no rules. Just your thoughts, exactly as they are.
+              </p>
+            </div>
+            <div className={styles.textContainer3}>
+              <b>3.See how you grow over time</b>
+              <p className={styles.infoText}>
+                Notice patterns, changes, and progress as your journal fills up.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.rightSection}>
+        <div className={styles.tag}>
+          <div className={styles.tagText}>Hello, Stranger</div>
+        </div>
+        <div className={`${styles.lockNumber1} ${styles.lockNumbers}`}>0</div>
+        <div className={`${styles.lockNumber2} ${styles.lockNumbers}`}>0</div>
+        <div className={`${styles.lockNumber3} ${styles.lockNumbers}`}>0</div>
+        <div className={`${styles.lockNumber4} ${styles.lockNumbers}`}>0</div>
+      </div>
     </div>
   );
 }

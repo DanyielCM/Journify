@@ -1,0 +1,174 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Users: application users
+// Note: When a user is created, they should automatically receive a free subscription
+// (see src/services/auth.service.js registerUser function)
+model User {
+  id              String                 @id @default(uuid())
+  email           String                 @unique
+  name            String                 @unique
+  avatar_url      String?
+  time_zone       String?
+  onboarding_done Boolean                @default(false)
+  created_at      DateTime               @default(now())
+  password_hash   String?
+  goals           Goal[]
+  journalEntries  JournalEntry[]
+  moodLogs        MoodLog[]
+  payments        Payment[]
+  subscriptions   Subscription[]
+  selectedQs      UserSelectedQuestion[]
+}
+
+// Admins: application administrators (managed directly in DB)
+model Admin {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password_hash String
+  created_at    DateTime @default(now())
+}
+
+model Plan {
+  id             String         @id @default(uuid())
+  code           String         @unique
+  name           String
+  price          Int
+  currency       String
+  billing_period String
+  limits_json    Json
+  features_json  Json
+  subscriptions  Subscription[]
+}
+
+model Subscription {
+  id                   String    @id @default(uuid())
+  user_id              String
+  plan_id              String
+  status               String
+  current_period_start DateTime
+  current_period_end   DateTime
+  cancel_at            DateTime?
+  external_id          String?
+  created_at           DateTime  @default(now())
+  payments             Payment[]
+  plan                 Plan      @relation(fields: [plan_id], references: [id])
+  user                 User      @relation(fields: [user_id], references: [id])
+
+  @@index([user_id])
+  @@index([plan_id])
+}
+
+model Payment {
+  id                  String       @id @default(uuid())
+  subscription_id     String
+  user_id             String
+  amount              Int
+  currency            String
+  provider            String
+  provider_payment_id String
+  status              String
+  created_at          DateTime     @default(now())
+  subscription        Subscription @relation(fields: [subscription_id], references: [id])
+  user                User         @relation(fields: [user_id], references: [id])
+
+  @@index([user_id])
+  @@index([subscription_id])
+}
+
+model Question {
+  id         String                 @id @default(uuid())
+  text       String
+  is_active  Boolean                @default(true)
+  created_at DateTime               @default(now())
+  answers    EntryAnswer[]
+  selectedBy UserSelectedQuestion[]
+}
+
+model UserSelectedQuestion {
+  id          String   @id @default(uuid())
+  user_id     String
+  question_id String
+  position    Int
+  question    Question @relation(fields: [question_id], references: [id])
+  user        User     @relation(fields: [user_id], references: [id])
+
+  @@unique([user_id, question_id])
+}
+
+model JournalEntry {
+  id         String        @id @default(uuid())
+  user_id    String
+  entry_date DateTime
+  title      String
+  body       String
+  visibility String        @default("visible")
+  created_at DateTime      @default(now())
+  answers    EntryAnswer[]
+  user       User          @relation(fields: [user_id], references: [id])
+
+  @@unique([user_id, entry_date])
+  @@index([user_id, entry_date])
+}
+
+model EntryAnswer {
+  id          String       @id @default(uuid())
+  entry_id    String
+  question_id String
+  answer_text String
+  created_at  DateTime     @default(now())
+  entry       JournalEntry @relation(fields: [entry_id], references: [id])
+  question    Question     @relation(fields: [question_id], references: [id])
+
+  @@index([entry_id])
+}
+
+model Mood {
+  id        Int       @id
+  name      String
+  emoji_key String
+  is_active Boolean   @default(true)
+  logs      MoodLog[]
+}
+
+model MoodLog {
+  id         String   @id @default(uuid())
+  user_id    String
+  entry_date DateTime
+  mood_id    Int
+  note       String?
+  created_at DateTime @default(now())
+  mood       Mood     @relation(fields: [mood_id], references: [id])
+  user       User     @relation(fields: [user_id], references: [id])
+
+  @@unique([user_id, entry_date])
+  @@index([user_id, entry_date])
+}
+
+model Goal {
+  id          String         @id @default(uuid())
+  user_id     String
+  title       String
+  description String?
+  status      String         @default("active")
+  due_date    DateTime?
+  created_at  DateTime       @default(now())
+  user        User           @relation(fields: [user_id], references: [id])
+  progress    GoalProgress[]
+}
+
+model GoalProgress {
+  id         String   @id @default(uuid())
+  goal_id    String
+  note       String
+  created_at DateTime @default(now())
+  goal       Goal     @relation(fields: [goal_id], references: [id])
+
+  @@index([goal_id])
+}

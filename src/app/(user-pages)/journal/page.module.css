@@ -1,0 +1,125 @@
+.journalPage {
+    background-image: url('/Common/Wood-Background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    color: var(--color-sienna-500);
+    font-family: var(--font-pacifico);
+}
+
+
+/* Layout */
+/* png */
+.journal {
+    background-image: url('/Common/Opened-Journal.png');
+    width: 1241px;
+    height: 775px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.leftSide {
+    width: 500px;
+    height: 659px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.leftSidePage {
+    background-image: url('/Journal/Answer-Left-Page.svg');
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 556px;
+}
+
+.rightSidePage {
+    background-image: url('/Journal/Answer-Right-Page.svg');
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 659px;
+}
+
+/* Top Section */
+
+.topSection {
+    width: 500px;
+    height: 86.1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.journalTitle {
+    border-radius: 10px;
+    background-color: var(--color-burlywood);
+    border: 2px solid var(--color-peru-300);
+    color: var(--color-sienna-500);
+    width: 277px;
+    height: 86.1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Title input inside the journalTitle box */
+.journalTitleInput {
+    width: 90%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-pacifico);
+    color: var(--color-sienna-500);
+    font-size: var(--fs-18);
+    text-align: center;
+}
+
+/* Textarea that fills the left page */
+.journalTextarea {
+    width: 500px;
+    height: 556px;
+    /* padding: 24px; */
+    box-sizing: border-box;
+    resize: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-pacifico);
+    color: var(--color-sienna-500);
+    font-size: var(--fs-16);
+    padding: 18px 8px 8px 32px;
+    outline: none;
+    line-height: 1.5;
+}
+
+/* Make right page position relative so save button can be placed bottom-right */
+.rightSidePage {
+    background-image: url('/Journal/Answer-Right-Page.svg');
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 659px;
+    position: relative;
+}
+
+.journalSaveButton {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+}
+
+.journalTextarea:focus-within {
+    box-shadow: 0 0 40px rgba(255, 170, 72, 0.6);
+    border-radius: 8px;
+    transition: box-shadow 180ms ease;
+}

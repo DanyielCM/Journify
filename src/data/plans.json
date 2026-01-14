@@ -1,0 +1,22 @@
+[
+  {
+    "id": "free",
+    "title": "Free",
+    "features": ["1 question/day", "basic journal"]
+  },
+  {
+    "id": "paid",
+    "title": "Paid",
+    "features": ["2 questions/day", "themed journal", "mood tracking"]
+  },
+  {
+    "id": "premium",
+    "title": "Premium",
+    "features": [
+      "6 questions/day",
+      "themed journal",
+      "mood tracking",
+      "goals tracking"
+    ]
+  }
+]

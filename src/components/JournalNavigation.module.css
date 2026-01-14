@@ -1,0 +1,138 @@
+/* Journal Navigation */
+
+.journalSigns {
+    position: relative;
+}
+
+.journalSignsLeft {
+    width: 78px;
+    height: 455px;
+    position: absolute;
+    left: -668px;
+    bottom: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.journalSignsRight {
+    height: 78px;
+    height: 96px;
+    position: absolute;
+    left: 590px;
+    top: -180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Individual sign tiles */
+.signDashboard,
+.signJournal,
+.signQuestions,
+.signMood,
+.signGoals,
+.signSettings {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    width: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* png */
+.signDashboard {
+    background-image: url('/Signs/Sign-Dashboard.svg');
+    height: 61px;
+}
+
+.signJournal {
+    background-image: url('/Signs/Sign-Journal.svg');
+    height: 75px;
+}
+
+/* Reset anchor/link default styles for sign tiles */
+.signDashboard,
+.signJournal,
+.signDashboard:link,
+.signJournal:link,
+.signDashboard:visited,
+.signJournal:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.signDashboard:hover,
+.signJournal:hover,
+.signDashboard:focus,
+.signJournal:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+.signQuestions {
+    background-image: url('/Signs/Sign-Questions.svg');
+    height: 85px;
+}
+
+.signMood {
+    background-image: url('/Signs/Sign-Mood.svg');
+    height: 87px;
+}
+
+.signGoals {
+    background-image: url('/Signs/Sign-Goals.svg');
+    height: 83px;
+}
+
+.signSettings {
+    background-image: url('/Signs/Sign-Settings.svg');
+    height: 96px;
+}
+
+.signText {
+    /* rotate text */
+    transform: rotate(90deg);
+    transform-origin: center;
+    white-space: nowrap;
+    text-align: center;
+    padding-bottom: 32px;
+
+}
+
+.signTextSettings {
+    /* rotate text */
+    transform: rotate(-90deg);
+    transform-origin: center;
+    white-space: nowrap;
+    text-align: center;
+    padding-bottom: 32px;
+}
+
+.signIconLock {
+    background-image: url('/Dashboard/lockIcon.svg');
+    background-repeat: no-repeat;
+    position: relative;
+    width: 24px;
+    height: 20px;
+    left: 16px;
+    top: -8px;
+}
+
+.signIconSettings {
+    background-image: url('/Dashboard/settingIcon.svg');
+    background-repeat: no-repeat;
+    position: relative;
+    width: 24px;
+    height: 20px;
+    left: -14px;
+
+}

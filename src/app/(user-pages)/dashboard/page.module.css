@@ -1,0 +1,401 @@
+.dashboardPage {
+    background-image: url('/Common/Wood-Background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    color: var(--color-sienna-500);
+    font-family: var(--font-pacifico);
+}
+
+
+.signDisconnect {
+    background-image: url('/Dashboard/Close-Button.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.signDisconnect:hover {
+    filter: brightness(0.95);
+}
+
+/* Logout tooltip */
+.logoutTooltip {
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--color-saddlebrown);
+    padding: 6px 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+
+
+/* Layout */
+/* png */
+.journal {
+    background-image: url('/Common/Opened-Journal.png');
+    width: 1241px;
+    height: 775px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.leftSide {
+    background-image: url('/Dashboard/Week-Banners.svg');
+    background-repeat: no-repeat;
+    width: 550px;
+    height: 675px;
+}
+
+.rightSide {
+    width: 520px;
+    height: 675px;
+}
+
+/* Top Side */
+
+.topSide {
+    width: 500px;
+    height: 86.1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.decoSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.line {
+    background-image: url('/Dashboard/Decoration-Line.svg');
+    background-repeat: no-repeat;
+    width: 269.6px;
+    height: 35px;
+}
+
+.questionTitle {
+    border-radius: 10px;
+    background-color: var(--color-burlywood);
+    border: 2px solid var(--color-peru-300);
+    width: 277px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* allow controls inside */
+}
+
+/* small arrows inside the title, positioned to the right without changing layout */
+.questionControls {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.dqArrow {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    font-size: var(--fs-24);
+    color: var(--color-sienna-500);
+    cursor: pointer;
+    padding: 0;
+}
+
+.dqArrow:hover {
+    filter: brightness(0.95);
+}
+
+/* Middle Side */
+.middleSide {
+    background-image: url('/Dashboard/Text-Input-Section.svg');
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 225px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+}
+
+.questionText {
+    width: 446px;
+    height: 25px;
+    padding: 18px;
+    padding-left: 32px;
+    padding-right: 24px;
+    line-height: 1.5;
+}
+
+.answerText {
+    width: 500px;
+    height: 130px;
+    padding: 6px;
+    padding-left: 32px;
+    padding-right: 24px;
+    background: transparent;
+    border: none;
+    resize: none;
+    font-size: var(--fs-16);
+    color: var(--color-sienna-500);
+    font-family: var(--font-pacifico);
+    outline: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+
+.answerText::placeholder {
+    color: var(--color-sienna-500);
+    font-family: var(--font-pacifico);
+    font-size: var(--fs-16);
+}
+
+/* Add glow when textarea is focused */
+.middleSide:focus-within {
+    box-shadow: 0 0 40px rgba(255, 170, 72, 0.6);
+    border-radius: 8px;
+    transition: box-shadow 180ms ease;
+}
+
+/* Disabled state for button */
+.answerButtonDisabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.answerButton {
+    width: 50px;
+    height: 20px;
+    border-radius: 5px;
+    font-family: var(--font-pacifico);
+    background-color: var(--color-burlywood);
+    color: var(--color-sienna-500);
+    border: 2px solid var(--color-peru-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-14);
+    margin: 8px 24px 0 0;
+    cursor: pointer;
+}
+
+
+
+/* Bottom Side */
+
+.bottomSide {
+    width: 500px;
+    height: 280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.moodsContainer {
+    width: 207px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.moodTitle {
+    border-radius: 10px;
+    background-color: var(--color-burlywood);
+    border: 2px solid var(--color-peru-300);
+    width: 207px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moods {
+    /* background-image: url('/Dashboard/Moods-Group.svg');
+    background-repeat: no-repeat;
+    background-position: center; */
+    width: 207px;
+    height: 223.4px;
+    border: 2px solid var(--color-peru-300);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mood grid and items */
+.moodsGrid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: auto;
+    row-gap: 2px;
+    gap: 6px;
+    align-items: center;
+    justify-items: center;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* First row: 2 items */
+.moodsGrid> :nth-child(1),
+.moodsGrid> :nth-child(2) {
+    grid-column: span 3;
+}
+
+/* Middle items: 3 per row */
+.moodsGrid> :nth-child(n+3):nth-child(-n+5) {
+    grid-column: span 2;
+}
+
+/* Last row: center 2 items */
+.moodsGrid> :nth-last-child(1),
+.moodsGrid> :nth-last-child(2) {
+    grid-column: span 3;
+}
+
+
+.moodItem {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+}
+
+.moodImage {
+    width: 44px;
+    height: 44px;
+    transition: transform 150ms ease;
+}
+
+.moodItem:hover .moodImage {
+    transform: translateY(-6px);
+}
+
+.moodLabel {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    padding: 2px 6px;
+    font-size: var(--fs-14);
+    color: var(--color-sienna-500);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.moodItem:hover .moodLabel {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Selected mood display (single, larger) */
+
+.moodItemSelected {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.moodImageSelected {
+    width: 88px;
+    height: 88px;
+    display: block;
+}
+
+/* Goals */
+.goalsContainer {
+    width: 277px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.goalsTitle {
+    border-radius: 10px;
+    background-color: var(--color-burlywood);
+    border: 2px solid var(--color-peru-300);
+    width: 277px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goals {
+    background-image: url('/Dashboard/Goals-Progress.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 277px;
+    height: 223.4px;
+    border: 2px solid var(--color-peru-300);
+    border-radius: 10px;
+}
+
+/* Disabled states */
+.disabled {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    pointer-events: none;
+    cursor: not-allowed;
+    position: relative;
+
+}
+
+.disabled::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 10px;
+    z-index: 1;
+
+}
